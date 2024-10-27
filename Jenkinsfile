@@ -1,21 +1,19 @@
 pipeline {
     agent any 
     stages {
-           stage('Restore dependencies') {
+        stage('Restore dependencies') { 
             steps {
-                bat '"C:/Program Files/dotnet/dotnet.exe" restore'
+                bat 'dotnet restore' 
             }
         }
-
-        stage('Build') {
+        stage('Dotnet Build') { 
             steps {
-                bat '"C:/Program Files/dotnet/dotnet.exe" build --no-restore'
+                bat 'dotnet build --no-response' 
             }
         }
-
-        stage('Run Tests') {
+        stage('Execute tests') { 
             steps {
-                bat '"C:/Program Files/dotnet/dotnet.exe" test --no-build'
+                bat 'dotnet test --no-build --verbosity normal' 
             }
         }
     }
