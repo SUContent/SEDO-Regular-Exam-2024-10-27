@@ -20,4 +20,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Execute unit tests
-      run: dotnet test \SoftUniBazar.Data --no-build --verbosity normal
+      run: dotnet test \SoftUniBazar.Tests --no-build --verbosity normal
