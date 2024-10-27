@@ -1,35 +1,21 @@
 name: Build and Test .NET Project
-
 on:
   push:
     branches: [ "develop" ]
-  pull_request:
-    branches: [ "develop" ]
-
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the repository
       - name: Checkout code
-        uses: actions/checkout@v4
-
-      # Step 2: Setup .NET environment
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/checkout@3
+      - name: Setup .NET version 6
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 6.0.x
-
-      # Step 3: Restore dependencies
       - name: Restore dependencies
-        run: dotnet restore SoftUniBazar/SoftUniBazar.csproj
-        continue-on-error: false
-
-      # Step 4: Validate .csproj file by attempting to build it
+        run: dotnet restore
       - name: Build the project
-        run: dotnet build SoftUniBazar.Tests/SoftUniBazar.Tests.csproj --no-restore --verbosity minimal
-
-      # Step 5: Run unit tests
-      - name: Run Tests
+        run: dotnet build --no-restore
+      - name: Run Uni Tests
         run: dotnet test SoftUniBazar.Tests/SoftUniBazar.Tests.csproj --no-build --verbosity normal
