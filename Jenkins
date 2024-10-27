@@ -1,21 +1,60 @@
 pipeline {
     agent any 
 
+    environment {
+        DOTNET_CLI_TELEMETRY_OPTOUT = '1' // Disable telemetry
+    }
+
     stages {
-        stage('Restore dependencies') { 
+        stage('Checkout') {
             steps {
-                bat 'dotnet restore'
+                checkout scm // Checkout code from the repository
             }
         }
-        stage('Dotnet Build') { 
+        
+        stage('Restore Dependencies') { 
             steps {
-                bat 'dotnet build --no-restore'
+                script {
+                    echo 'Restoring .NET dependencies...'
+                    bat 'dotnet restore'
+                }
             }
         }
-        stage('Execute tests') { 
+        
+        stage('Build') { 
             steps {
-                bat 'dotnet test --no-build --verbosity normal' // Added 'test' command
+                script {
+                    echo 'Building the project...'
+                    bat 'dotnet build --no-restore'
+                }
             }
+        }
+        
+        stage('Run Tests') { 
+            steps {
+                script {
+                    echo 'Running unit tests...'
+                    bat 'dotnet test --no-build --verbosity normal'
+                }
+            }
+        }
+        
+        stage('Publish') {
+            steps {
+                script {
+                    echo 'Publishing the application...'
+                    bat 'dotnet publish -c Release -o ./publish'
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed!'
         }
     }
 }
