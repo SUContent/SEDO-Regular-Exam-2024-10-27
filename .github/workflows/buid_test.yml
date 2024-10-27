@@ -24,4 +24,4 @@ jobs:
       run: dotnet build SoftUniBazar/SoftUniBazar.csproj --no-restore
 
     - name: Execute Unit Tests
-      run: dotnet test SoftUniBazar.Tests/SoftUniBazar.Tests.csproj --no-build --verbosity normal
+      run: dotnet test SoftUniBazar.Tests/SoftUniBazar.Tests.csproj --no-build --verbosity detailed --self-contained
