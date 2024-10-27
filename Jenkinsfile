@@ -1,15 +1,14 @@
 pipeline {
     agent any
 
-    // Restrict pipeline to run only on 'feature-ci-pipeline' branch
-    triggers {
-        pollSCM('* * * * *') // Optional: to poll Git for changes
+    environment {
+        TARGET_BRANCH = 'feature-ci-pipeline'
     }
-    
+
     stages {
         stage('Restore Dependencies') { 
             when {
-                branch 'feature-ci-pipeline'
+                expression { env.BRANCH_NAME == env.TARGET_BRANCH }
             }
             steps {
                 bat 'dotnet restore'
@@ -17,7 +16,7 @@ pipeline {
         }
         stage('Build') {
             when {
-                branch 'feature-ci-pipeline'
+                expression { env.BRANCH_NAME == env.TARGET_BRANCH }
             }
             steps {
                 bat 'dotnet build --no-restore'
@@ -25,7 +24,7 @@ pipeline {
         }
         stage('Run Tests') {
             when {
-                branch 'feature-ci-pipeline'
+                expression { env.BRANCH_NAME == env.TARGET_BRANCH }
             }
             steps {
                 bat 'dotnet test --no-build --verbosity normal'
