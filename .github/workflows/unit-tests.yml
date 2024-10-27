@@ -28,6 +28,6 @@ jobs:
       run: dotnet build --no-restore --configuration Debug
 
     - name: Execute the Unit Tests
-      run: dotnet test ${{ github.workspace }}/SoftUniBazar.Tests/SoftUniBazar.Tests.csproj --no-build --verbosity detailed --diag:log.txt
+      run: dotnet test ${{ github.workspace }}/SoftUniBazar.Tests/SoftUniBazar.Tests.csproj --no-build --verbosity normal
 
   
