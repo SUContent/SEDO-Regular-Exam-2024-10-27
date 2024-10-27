@@ -21,4 +21,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Execute Integration Tests
-      run: dotnet test Homes.SoftUniBazar.IntegrationTests/SoftUniBazar.IntegrationTests.csproj --no-build --verbosity normal
+      run: dotnet test SoftUniBazar.IntegrationTests/SoftUniBazar.IntegrationTests.csproj --no-build --verbosity normal
