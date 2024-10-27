@@ -1,0 +1,26 @@
+
+name: Build and Run Tests
+
+on:
+  push:
+    branches: [ "develop" ]
+  
+
+jobs:
+  build_tests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the reposity
+      uses: actions/checkout@v4
+    - name: Setup .NET Version 6
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Execute Tests
+      run: dotnet test SoftUniBazar.Tests/SoftUniBazar.Tests.csproj --no-build --verbosity normal
