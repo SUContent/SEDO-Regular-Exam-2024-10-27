@@ -7,6 +7,8 @@ using SoftUniBazar.Data.Models;
 using SoftUniBazar.Models.Ad;
 using SoftUniBazar.Models.Category;
 
+//Some change here
+
 namespace SoftUniBazar.Controllers
 {
     [Authorize]
