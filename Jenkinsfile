@@ -2,25 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Restore dependencies') {
             steps {
-                git url: 'https://github.com/enevmartin/SEDO-Regular-Exam-2024-10-27.git', branch: 'feature-ci-pipeline'
+                sh 'dotnet restore'
             }
         }
-        stage('Build') {
+        stage('Build project') {
             steps {
-                script {
-                    echo 'Building the application...'
-                    sh 'dotnet build --configuration Release'
-                }
+                sh 'dotnet build --no-restore'
             }
         }
-        stage('Test') {
+        stage('Execute tests') {
             steps {
-                script {
-                    echo 'Running tests...'
-                    sh 'dotnet test --no-build --configuration Release'
-                }
+                sh 'dotnet test --no-build --verbosity normal'
             }
         }
     }
