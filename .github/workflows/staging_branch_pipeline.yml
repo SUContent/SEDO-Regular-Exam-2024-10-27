@@ -1,0 +1,42 @@
+name: Staging branch build and integration test
+
+on:
+  push:
+    branches: ['staging']
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+      
+      - name: Setup .Net version 6.0.x
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 6.0.x
+      
+      - name: Restore dependencies
+        run: dotnet restore
+        
+      - name: Build
+        run: dotnet build --no-restore
+    
+  integration-test:
+
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET version 6.0.x
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 6.0.x
+        
+      - name: Execute integration tests
+        run: dotnet test SoftUniBazar.IntegrationTests/SoftUniBazar.IntegrationTests.csproj --verbosity normal
