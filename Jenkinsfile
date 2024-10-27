@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Restore Dependencies') {
             when {
-                branch 'feature-ci-pipeline' 
+                expression { env.BRANCH_NAME == 'feature-ci-pipeline' } 
             }       
             steps {
                 sh 'dotnet restore'
@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Build') {
             when {
-                branch 'feature-ci-pipeline' 
+                expression { env.BRANCH_NAME == 'feature-ci-pipeline' } 
             }
             steps {
                 sh 'dotnet build --no-restore'
@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Run Tests') {
             when {
-                branch 'feature-ci-pipeline' 
+                expression { env.BRANCH_NAME == 'feature-ci-pipeline' } 
             }
             steps {
                 sh 'dotnet test --no-build --configuration Release'
