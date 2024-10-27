@@ -13,12 +13,12 @@ pipeline {
         }
         stage('Run unit tests') {
             steps {
-                bat 'dotnet test SoftUniBazar.Tests\SoftUniBazar.Tests.csproj --no-build --verbosity normal'
+                bat 'dotnet test SoftUniBazar.Tests\\SoftUniBazar.Tests.csproj --no-build --verbosity normal'
             }
         }
         stage('Run integration tests') {
             steps {
-                bat 'dotnet test SoftUniBazar.IntegrationTests/SoftUniBazar.IntegrationTests.csproj --no-build --verbosity normal'
+                bat 'dotnet test SoftUniBazar.IntegrationTests\\SoftUniBazar.IntegrationTests.csproj --no-build --verbosity normal'
             }
         }
     }
