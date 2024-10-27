@@ -1,0 +1,12 @@
+
+/SoftUniBazar.Data/bin
+/SoftUniBazar.Data/obj
+/SoftUniBazar.IntegrationTests/bin
+/SoftUniBazar.IntegrationTests/obj
+/SoftUniBazar.Tests/bin
+/SoftUniBazar.Tests/obj
+/SoftUniBazar/bin
+/SoftUniBazar/obj
+.vs/SoftUniBazar/v17/DocumentLayout.json
+.vs/SoftUniBazar/v17/.suo
+.vs/SoftUniBazar/FileContentIndex/972b5a16-f5fc-406f-a687-417ecb0a87f9.vsidx
