@@ -1,0 +1,29 @@
+name: Build and run unit tests!
+
+on:
+  push:
+    branches: [ develop ]
+
+
+jobs:
+  build_unit_tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v4
+
+      - name: Setup .NET v6
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Restore dependancies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore
+
+      - name: Unit Tests execution
+        run: dotnet test SoftUniBazar.Tests/SoftUniBazar.Tests.csproj
+        
