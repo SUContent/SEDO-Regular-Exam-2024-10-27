@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/enevmartin/SEDO-Regular-Exam-2024-10-27.git', branch: 'feature-ci-pipeline'
+                git branch: 'feature-ci-pipeline'
             }
         }
         stage('Build') {
