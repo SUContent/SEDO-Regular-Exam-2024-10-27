@@ -1,4 +1,4 @@
-name: Build_init_tests
+name: Build_and_Test
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
 
     - name: Restore dependencies
       run: dotnet restore SoftUniBazar/SoftUniBazar.csproj --verbosity detailed
-      
+
     - name: Build
       run: dotnet build SoftUniBazar/SoftUniBazar.csproj --no-restore
 
