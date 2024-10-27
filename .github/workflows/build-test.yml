@@ -25,4 +25,4 @@ jobs:
         run: dotnet build --no-restore --configuration Release
 
       - name: Run Tests
-        run: dotnet test SoftUniBazar.Tests/SoftUniBazar.Tests.csproj --no-build --verbosity normal
+        run: dotnet test ${{ github.workspace }}/SoftUniBazar.Tests/SoftUniBazar.Tests.csproj --no-build --verbosity normal
