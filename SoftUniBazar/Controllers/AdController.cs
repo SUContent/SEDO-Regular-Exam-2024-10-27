@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
 using SoftUniBazar.Data;
 using SoftUniBazar.Data.Models;
 using SoftUniBazar.Models.Ad;
 using SoftUniBazar.Models.Category;
+using System.Security.Claims;
 
 namespace SoftUniBazar.Controllers
 {
