@@ -3,18 +3,27 @@ pipeline {
 
     stages {
         stage('Restore dependencies') {
+            when {
+                branch 'feature-ci-pipeline'
+            }
             steps {
-                bat 'dotnet restore'
+                sh 'dotnet restore'
             }
         }
         stage('Build project') {
+            when {
+                branch 'feature-ci-pipeline'
+            }
             steps {
-                bat 'dotnet build --no-restore'
+                sh 'dotnet build --no-restore'
             }
         }
         stage('Execute tests') {
+            when {
+                branch 'feature-ci-pipeline'
+            }
             steps {
-                bat 'dotnet test --no-build --verbosity normal'
+                sh 'dotnet test --no-build --verbosity normal'
             }
         }
     }
