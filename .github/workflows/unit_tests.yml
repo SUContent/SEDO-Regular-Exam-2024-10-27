@@ -1,4 +1,4 @@
-name:Build_init_tests
+name: Build_init_tests
 on:
   push:
     branches: [ "develop" ]
