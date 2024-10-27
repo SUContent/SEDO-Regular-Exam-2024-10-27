@@ -1,0 +1,33 @@
+name: .NET
+
+on:
+  push:
+    branches:
+      - develop
+      - staging
+
+jobs:
+  build-and-test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore Dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --no-restore
+
+    - name: Run Unit Tests On Develop
+      if: github.ref == 'refs/heads/develop'
+      run: dotnet test SoftUniBazar.Tests/SoftUniBazar.Tests.csproj
+
+    - name: Run Integration Tests On Staging
+      if: github.ref == 'refs/heads/staging'
+      run: dotnet test SoftUniBazar.IntegrationTests/SoftUniBazar.IntegrationTests.csproj
