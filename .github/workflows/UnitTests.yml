@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: checkout
-    - uses: actions/checkout@v4
+      uses: actions/checkout@v4
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
@@ -21,4 +21,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Execute Unit Tests
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test SoftUniBazar.Tests/SoftUniBazar.Tests.csproj --no-build --verbosity normal
