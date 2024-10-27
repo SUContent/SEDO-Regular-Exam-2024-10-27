@@ -1,9 +1,5 @@
 pipeline {
     agent any
-
-    environment {
-        TARGET_BRANCH = 'feature-ci-pipeline'
-    }
     stages {
         stage('Restore Dependencies') { 
             steps {
