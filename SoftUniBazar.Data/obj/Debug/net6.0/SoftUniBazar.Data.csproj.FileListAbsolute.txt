@@ -1,0 +1,15 @@
+C:\Users\BqgaiE\Desktop\softuni\SEDO-Regular-Exam-2024-10-27---Radoslav-Lichev\SoftUniBazar.Data\bin\Debug\net6.0\SoftUniBazar.Data.deps.json
+C:\Users\BqgaiE\Desktop\softuni\SEDO-Regular-Exam-2024-10-27---Radoslav-Lichev\SoftUniBazar.Data\bin\Debug\net6.0\SoftUniBazar.Data.runtimeconfig.json
+C:\Users\BqgaiE\Desktop\softuni\SEDO-Regular-Exam-2024-10-27---Radoslav-Lichev\SoftUniBazar.Data\bin\Debug\net6.0\SoftUniBazar.Data.dll
+C:\Users\BqgaiE\Desktop\softuni\SEDO-Regular-Exam-2024-10-27---Radoslav-Lichev\SoftUniBazar.Data\bin\Debug\net6.0\SoftUniBazar.Data.pdb
+C:\Users\BqgaiE\Desktop\softuni\SEDO-Regular-Exam-2024-10-27---Radoslav-Lichev\SoftUniBazar.Data\obj\Debug\net6.0\SoftUniBazar.Data.csproj.AssemblyReference.cache
+C:\Users\BqgaiE\Desktop\softuni\SEDO-Regular-Exam-2024-10-27---Radoslav-Lichev\SoftUniBazar.Data\obj\Debug\net6.0\SoftUniBazar.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\BqgaiE\Desktop\softuni\SEDO-Regular-Exam-2024-10-27---Radoslav-Lichev\SoftUniBazar.Data\obj\Debug\net6.0\SoftUniBazar.Data.AssemblyInfoInputs.cache
+C:\Users\BqgaiE\Desktop\softuni\SEDO-Regular-Exam-2024-10-27---Radoslav-Lichev\SoftUniBazar.Data\obj\Debug\net6.0\SoftUniBazar.Data.AssemblyInfo.cs
+C:\Users\BqgaiE\Desktop\softuni\SEDO-Regular-Exam-2024-10-27---Radoslav-Lichev\SoftUniBazar.Data\obj\Debug\net6.0\SoftUniBazar.Data.csproj.CoreCompileInputs.cache
+C:\Users\BqgaiE\Desktop\softuni\SEDO-Regular-Exam-2024-10-27---Radoslav-Lichev\SoftUniBazar.Data\obj\Debug\net6.0\SoftUniBazar.Data.sourcelink.json
+C:\Users\BqgaiE\Desktop\softuni\SEDO-Regular-Exam-2024-10-27---Radoslav-Lichev\SoftUniBazar.Data\obj\Debug\net6.0\SoftUniBazar.Data.dll
+C:\Users\BqgaiE\Desktop\softuni\SEDO-Regular-Exam-2024-10-27---Radoslav-Lichev\SoftUniBazar.Data\obj\Debug\net6.0\refint\SoftUniBazar.Data.dll
+C:\Users\BqgaiE\Desktop\softuni\SEDO-Regular-Exam-2024-10-27---Radoslav-Lichev\SoftUniBazar.Data\obj\Debug\net6.0\SoftUniBazar.Data.pdb
+C:\Users\BqgaiE\Desktop\softuni\SEDO-Regular-Exam-2024-10-27---Radoslav-Lichev\SoftUniBazar.Data\obj\Debug\net6.0\SoftUniBazar.Data.genruntimeconfig.cache
+C:\Users\BqgaiE\Desktop\softuni\SEDO-Regular-Exam-2024-10-27---Radoslav-Lichev\SoftUniBazar.Data\obj\Debug\net6.0\ref\SoftUniBazar.Data.dll
