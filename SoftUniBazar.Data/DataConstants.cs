@@ -12,5 +12,6 @@
         // Categroy
         public const int CategoryNameMax = 15;
         public const int CategoryNameMin = 3;
+        
     }
 }
