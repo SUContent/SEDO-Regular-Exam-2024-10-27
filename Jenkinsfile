@@ -16,10 +16,5 @@ pipeline {
                 bat 'dotnet test'
             }
         }
-        stage('Publish Test Results') {
-            steps {
-                publishTrxResults testResultsFile: '**/*.trx'
-            }
-        }
     }
 }
